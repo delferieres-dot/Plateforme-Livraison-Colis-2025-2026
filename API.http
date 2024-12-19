@@ -1,0 +1,10 @@
+POST http://localhost:3004/api/login
+Content-Type: application/json
+
+{
+  "email": "admin@fastdeliver.com",
+  "password": "admin123"
+}
+
+
+

@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* S'assure que le body prend toute la hauteur de la fenêtre */
+    background-color: #f4f6fa;
+}
+
+
+.header {
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    padding: 20px 5%;
+    background-color: white;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    flex-direction: row; /* Par défaut, garder les éléments en ligne */
+    text-align: center; /* Assure le centrage du texte */
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+
+.admin-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.role {
+    margin-right: auto; /* Pousse automatiquement le rôle à droite */
+    margin-left: 15px;
+    font-size: 13px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+
+.logout-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 17px;
+    cursor: pointer;
+}
+
+main {
+    padding: 20px 5%;
+}
+
+.main-container {
+    width: 100%; /* Fait en sorte que le conteneur prenne toute la largeur */
+    max-width: 1370px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    min-height: 500px;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+h1 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    width: 100%; /* S'assurer que la barre de contrôle prend toute la largeur disponible */
+}
+
+.search-bar {
+    flex: 1; /* Permet à la barre de recherche de prendre tout l'espace disponible */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.status-filter,
+.date-picker {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.add-package-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Conteneur pour ajouter la barre de défilement */
+.package-table-container {
+    width: 100%;
+    overflow-x: auto; /* Barre de défilement horizontale */
+}
+
+.package-table {
+    width: 100%; /* Adapte la largeur au conteneur */
+    border-collapse: collapse;
+    min-width: 800px; /* Largeur minimale du tableau pour garantir lisibilité */
+}
+
+.package-table th,
+.package-table td {
+    padding: 15px;
+    text-align: left;
+    border: none;
+    font-size: 14px; /* Taille adaptée pour petits écrans */
+}
+
+.package-table th {
+    background-color: #f3f3f3;
+}
+
+.package-table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    text-align: center;
+    display: inline-block;
+}
+
+.in-delivery {
+    background-color: hsl(170.53deg 70.37% 84.12%);
+}
+
+.in-preparation {
+    background-color: #f1c40f;
+}
+
+.edit-btn,
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.footer {
+    background-color: #292929;
+    color: white;
+    text-align: center;
+    padding: 25px 10px;
+    font-size: 12px;
+    margin-top: auto;
+}
+
+/* Styles spécifiques aux petits écrans */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Aligner les éléments en colonne sur les petits écrans */
+        align-items: center; /* Centrer horizontalement */
+        justify-content: center; /* Centrer verticalement */
+        padding: 20px;
+        text-align: center; /* Centrer le texte */
+    }
+
+    .title {
+        font-size: 20px;
+        margin: 0 0 10px 0; /* Marge 0 partout sauf en bas */
+    }
+    .role {
+        margin: 0 15px 10px 0; /* Marge 0 partout sauf en bas */
+        text-align: center; /* Centre le texte */
+        font-size: 12px; /* Réduit légèrement la taille pour les petits écrans */
+
+    }
+    .admin-info {
+        display: flex;
+        flex-direction: column; /* Aligner les éléments de l'info admin verticalement */
+        align-items: center; /* Centrer les éléments de l'info admin */
+        text-align: center; /* Centrer le texte des infos admin */
+        margin: 0 0 10px 30px; /* Marge 0 partout sauf en bas */
+    }
+
+    .logout-btn {
+        margin: 0 0 10px 0; /* Marge 0 partout sauf en bas */
+
+    }
+
+    /* Barre de contrôles : Placer les éléments en colonne sur petits écrans */
+    .controls {
+        flex-direction: column; /* Placer les éléments en colonne */
+        gap: 10px; /* Ajouter un espace entre les éléments */
+        align-items: flex-start; /* Aligner les éléments à gauche */
+        margin: 0 0 10px 0; /* Marge 0 partout sauf en bas */
+    }
+
+    .search-bar {
+        width: 100%; /* Faire en sorte que la barre de recherche prenne toute la largeur */
+    }
+
+    .status-filter,
+    .date-picker {
+        width: auto; /* Ne pas forcer la largeur à 100%, laisser les éléments plus petits */
+
+    }
+
+    .date-picker {
+        margin-bottom: 10px; /* Ajouter un espace en bas */
+    }
+    /* Ajouter les règles pour les boutons + Nouveau colis et le reste */
+    .add-package-btn {
+        margin-top: 10px; /* Ajouter un espacement entre la barre de recherche et le bouton */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column; /* Aligner les éléments en colonne sur les petits écrans */
+        align-items: center; /* Centrer horizontalement */
+        justify-content: center; /* Centrer verticalement */
+        padding: 20px;
+        text-align: center; /* Centrer le texte */
+    }
+
+    .title {
+        font-size: 20px;
+        margin: 0 0 10px 0; /* Marge 0 partout sauf en bas */
+    }
+    .role {
+        margin: 0 15px 10px 0; /* Marge 0 partout sauf en bas */
+        text-align: center; /* Centre le texte */
+        font-size: 12px; /* Réduit légèrement la taille pour les petits écrans */
+
+    }
+    .admin-info {
+        display: flex;
+        flex-direction: column; /* Aligner les éléments de l'info admin verticalement */
+        align-items: center; /* Centrer les éléments de l'info admin */
+        text-align: center; /* Centrer le texte des infos admin */
+        margin: 0 0 10px 30px; /* Marge 0 partout sauf en bas */
+    }
+
+    .logout-btn {
+        margin: 0 0 10px 0; /* Marge 0 partout sauf en bas */
+
+    }
+
+    /* Barre de contrôles : Placer les éléments en colonne sur petits écrans */
+    .controls {
+        flex-direction: column; /* Placer les éléments en colonne */
+        gap: 10px; /* Ajouter un espace entre les éléments */
+        align-items: flex-start; /* Aligner les éléments à gauche */
+        margin: 0 0 10px 0; /* Marge 0 partout sauf en bas */
+    }
+
+    .search-bar {
+        width: 100%; /* Faire en sorte que la barre de recherche prenne toute la largeur */
+    }
+
+    .status-filter,
+    .date-picker {
+        width: auto; /* Ne pas forcer la largeur à 100%, laisser les éléments plus petits */
+    }
+
+    /* Ajouter les règles pour les boutons + Nouveau colis et le reste */
+    .add-package-btn {
+        margin-top: 10px; /* Ajouter un espacement entre la barre de recherche et le bouton */
+    }
+}

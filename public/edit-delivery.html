@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Édition de commande - FastDeliver</title>
+    <link rel="stylesheet" href="CSS/edit-delivery.css">
+</head>
+<body>
+<header class="header">
+    <h1 class="title">FastDeliver</h1>
+    <button id="logout" class="logout-button">Déconnexion</button>
+</header>
+
+<main>
+    <div class="main-container">
+        <div class="content-box">
+            <div class="tracking-number-box">
+                <p class="tracking-number">Numéro de suivi : FD28465940BE</p>
+                <div class="buttons-container">
+                    <button  class="btn-cancel">Annuler</button>
+                    <button id="btn-save" class="btn-save">Enregistrer</button>
+                </div>
+            </div>
+
+            <div class="container">
+                <section class="colis-info">
+                    <h2>Édition du colis</h2>
+                    <form class="colis-form">
+                        <div class="form-group">
+                            <label for="tracking-number">N° de suivi</label>
+                            <input type="text" id="tracking-number" value="FD28465940BE" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="ship-date">Date d'expédition</label>
+                            <input type="date" id="ship-date" value="2024-11-13">
+                        </div>
+                        <div class="form-group">
+                            <label for="weight">Poids (kg)</label>
+                            <input type="number" id="weight" value="20">
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Statut</label>
+                            <select id="status">
+                                <option value="en-preparation">En préparation</option>
+                                <option value="en-route">En route</option>
+                                <option value="livré">Livré</option>
+                            </select>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="client-info">
+                    <h3>Informations client</h3>
+                    <form class="client-form">
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" value="Pluquet Frédéric">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" value="pluquet@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Adresse de livraison</label>
+                            <textarea id="address"></textarea>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="livreur-info">
+                    <h3>Livreur assigné</h3>
+                    <form class="livreur-form">
+                        <div class="form-group">
+                            <label for="delivery-person">Nom du livreur</label>
+                            <select id="delivery-person">
+                                <option value="person1">Livreur 1</option>
+                                <option value="person2">Livreur 2</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Notes livreur</label>
+                            <textarea id="notes"></textarea>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    © 2024 FastDeliver - Tous droits réservés
+</footer>
+
+<script src="JS/edit-delivery.js" defer></script>
+</body>
+</html>

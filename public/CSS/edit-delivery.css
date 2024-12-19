@@ -1,0 +1,164 @@
+/* Style général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f4f6fa;
+}
+
+/* En-tête */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 90px;  /* Réduction du padding */
+    background-color: white;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    font-size: 25px;  /* Réduction de la taille de la police */
+    font-weight: bold;
+}
+
+.logout-button {
+    background-color: #e24e42;
+    color: white;
+    padding: 8px 16px;  /* Réduction du padding */
+    border: none;
+    cursor: pointer;
+    font-size: 12px;  /* Réduction de la taille de la police */
+    border-radius: 5px;
+}
+
+.logout-button:hover {
+    background-color: #d43b33;
+}
+
+/* Conteneur principal */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    max-width: 100%;  /* Pour s'assurer qu'il ne déborde pas */
+}
+
+/* Box contenant tout le contenu avec fond blanc */
+.content-box {
+    background-color: white;  /* Fond blanc pour le bloc entier */
+    padding: 20px;  /* Réduction du padding */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Ombre légère */
+    width: 100%;  /* Réduit la largeur à 100% */
+    max-width: 1000px;  /* Limite la largeur maximale */
+    border-radius: 8px;  /* Coins arrondis */
+}
+
+/* Container pour le numéro de suivi et les boutons */
+.tracking-number-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;  /* Réduction du padding */
+    border-bottom: 1px solid #ccc;  /* Séparation entre le numéro de suivi et les sections */
+}
+
+.tracking-number {
+    font-size: 30px;  /* Réduction de la taille de la police */
+    font-weight: bold;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 8px;  /* Réduction de l'écart entre les boutons */
+}
+
+.btn-save, .btn-cancel {
+    padding: 8px 16px;  /* Réduction du padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;  /* Réduction de la taille     de la police */
+}
+
+.btn-cancel {
+    background-color: #f6f5fa;
+    color: #727173;
+}
+
+.btn-save:hover {
+    background-color: #f3f7fb;
+}
+
+.btn-save {
+
+    background-color: #0985df;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background-color: #ffffff;
+
+}
+
+/* Conteneur de contenu */
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;  /* Espacement en haut entre les sections */
+    flex-wrap: wrap;  /* Permet aux sections de se réorganiser si nécessaire */
+    gap: 5px;  /* Espace entre les sections */
+}
+
+/* Sections Colis Info, Client Info, Livreur Info */
+section {
+    background-color: #f3f3f5;  /* Fond gris clair pour chaque section */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Ombre légère */
+    padding: 15px;  /* Réduction du padding */
+    width: 100%;  /* 100% sur petits écrans */
+    max-width: 290px;  /* Limite la largeur de chaque section */
+    border-radius: 5px;  /* Coins arrondis */
+    margin-bottom: 10px;  /* Réduction de l'espacement entre les sections */
+}
+
+/* Garder les titres en noir */
+h2, h3 {
+    font-size: 16px;  /* Réduction de la taille de la police */
+    font-weight: bold;
+    margin-bottom: 15px;  /* Réduction de l'espacement */
+    color: black;  /* Couleur du texte en noir */
+}
+
+.form-group {
+    margin-bottom: 10px;  /* Réduction de l'espacement */
+}
+
+/* Champ de saisie */
+input, select, textarea {
+    width: 100%;
+    padding: 8px;  /* Réduction du padding */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 12px;  /* Réduction de la taille de la police */
+}
+
+textarea {
+    height: 80px;  /* Réduction de la hauteur des champs de texte */
+}
+
+/* Pied de page */
+.footer {
+    background-color: #292929;
+    color: white;
+    text-align: center;
+    padding: 25px 10px;  /* Réduction du padding */
+    font-size: 12px;
+    margin-top: auto;
+}

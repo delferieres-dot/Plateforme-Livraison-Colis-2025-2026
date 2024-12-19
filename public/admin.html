@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administration - FastDeliver</title>
+  <link rel="stylesheet" href="CSS/admin.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="title">FastDeliver</div>
+  <div class="role">Administration</div>
+  <div class="admin-info">
+    <p>Admin: Jean Martin</p>
+  </div>
+  <button id="logout" class="logout-btn">Déconnexion</button>
+</header>
+
+<main>
+  <div class="main-container">
+    <div class="header-row">
+      <h1>Gestion des colis</h1>
+      <button id="btn-save" class="add-package-btn">+ Nouveau colis</button>
+    </div>
+    <div class="controls">
+      <input type="text" placeholder="Rechercher un colis..." class="search-bar">
+      <select class="status-filter">
+        <option value="">Tous les statuts</option>
+      </select>
+      <input type="date" class="date-picker">
+      <div class="package-table-container">
+        <table class="package-table">
+          <thead>
+          <tr>
+            <th>N° de suivi</th>
+            <th>Date</th>
+            <th>Client</th>
+            <th>Adresse</th>
+            <th>Statut</th>
+            <th>Livreur</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <p>&copy; 2024 FastDeliver - Tous droits réservés</p>
+</footer>
+
+<script src="JS/admin.js" defer></script>
+</body>
+</html>

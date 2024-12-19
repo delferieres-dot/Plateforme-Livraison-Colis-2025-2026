@@ -1,0 +1,175 @@
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body and Flex Layout */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f4f6fa;
+}
+.admin-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.role {
+    margin-right: auto; /* Pousse automatiquement le rôle à droite */
+    margin-left: 15px;
+    font-size: 13px;
+    padding: 5px 10px;
+    background-color: #00B892;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 90px;
+    background-color: white;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.admin-info {
+    margin-right: 10px;
+    color: #555;
+}
+
+.logout-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Main Content */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.delivery-card {
+    background-color: white;
+    width: 63%;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative; /* For positioning buttons */
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h1 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.problem-btn {
+    background-color: #f9f9fb;
+    color: red;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.package
+{
+    margin-top: 5px;
+   color: #7e808c;
+}
+.problem-btn:hover {
+    background-color: #e6e6e6;
+}
+
+.delivered-btn {
+    background-color: #00B892;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delivered-btn:hover {
+    background-color: #27ae60;
+}
+
+.separator {
+    height: 1px;
+    background-color: #ddd;
+    margin: 15px 0 30px 0;
+    width: 100%;
+    align-self: center;
+}
+
+/* Recipient Info */
+.recipient-info {
+    background-color: #f9f9fb;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.recipient-info h2 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.recipient-info p {
+    margin-bottom: 5px;
+}
+
+.recipient-info p span {
+color: #7e808c;
+}
+
+.dataRecipient{
+    margin-bottom: 25px;
+}
+/* Footer */
+.footer {
+    background-color: #292929;
+    color: white;
+    text-align: center;
+    padding: 25px 10px;
+    font-size: 12px;
+    margin-top: auto;
+}
