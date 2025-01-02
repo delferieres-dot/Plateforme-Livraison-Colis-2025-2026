@@ -204,7 +204,7 @@ body {
     font-weight: bold;
     margin-bottom: 10px; /* Espacement entre le titre et l'adresse */
 }
-.details-block-footer p2 {
+.details-block-footer p {
     font-size: 14px;
     color: #7e808c;
 }
