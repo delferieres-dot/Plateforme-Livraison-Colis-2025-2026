@@ -2,9 +2,9 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prochaine livraison - FasterDeliver</title>
+    <title>Prochaine livraison - FastDeliver</title>
     <link rel="stylesheet" href="CSS/driver-next-delivery.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -12,13 +12,14 @@
     <div class="title">FastDeliver</div>
     <div class="role">Livreur</div>
     <div class="admin-info">
-        <p>Emma Roux</p>
+        <p></p> <!-- Le prénom de l'utilisateur sera inséré ici -->
     </div>
     <button id="logout" class="logout-btn">Déconnexion</button>
 </header>
 
 <main>
-    <div class="delivery-card">
+    <!-- Section de la carte de livraison actuelle -->
+    <div class="delivery-card" id="delivery-card">
         <div class="card-header">
             <h1>Prochaine livraison</h1>
             <div class="buttons">
@@ -27,36 +28,63 @@
             </div>
         </div>
 
-        <div class="package">
-        <p>Colis: FD28465940BE</p>
+        <div class="package" id="package-info">
+            <!-- Informations du colis actuel -->
         </div>
 
         <div class="separator"></div>
 
+        <!-- Informations sur le destinataire -->
         <div class="recipient-info">
             <h2>Destinataire</h2>
-            <p><span>Nom:</span> </p>
-            <div class="dataRecipient">
-            <p >Pluqet Frédéric</p>
+            <p><span>Nom:</span></p>
+            <div class="dataRecipient" id="recipient-info">
+                <p></p>
             </div>
             <p><span>Téléphone:</span></p>
-            <div class="dataRecipient">
-            <p> 06988888</p>
+            <div class="dataRecipient" id="recipient-phone">
+                <p></p>
             </div>
             <p><span>Adresse:</span></p>
-            <div class="dataRecipient">
-            <p>42 rue Lilas</p>
-            <p>Appartement 3B - 2ème étage</p>
-            <p>75011 Paris</p>
+            <div class="dataRecipient" id="recipient-address">
+                <p></p>
             </div>
+
+            <!-- Section Instructions -->
+            <div class="instructions" id="instructions">
+                <h3>Instructions</h3>
+                <div class="note" id="note">
+                    <div class="note-header"></div>
+                    <p id="package-note"></p> <!-- Afficher la note ici -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section pour afficher quand il n'y a pas de livraison -->
+    <div class="no-delivery" id="no-delivery">
+        <div class="no-delivery-container">
+            <img src="/Image/done.jpg" class="no-delivery-image" >
+            <p class="no-delivery-message">Aucune livraison prévue</p>
+        </div>
+    </div>
+
+    <div class="next-package-container" id="next-package-container">
+        <div class="card-header">
+            <h1>Prochaines livraisons</h1>
+        </div>
+        <div class="separator"></div> <!-- Séparateur sous la liste -->
+        <div class="next-packages-list" id="next-packages-list">
+            <!-- Chaque livraison sera ajoutée ici en ligne -->
         </div>
     </div>
 </main>
 
-<footer class="footer">
+    <footer class="footer">
     <p>&copy; 2024 FastDeliver - Tous droits réservés</p>
 </footer>
 
 <script src="JS/driver-next-delivery.js" defer></script>
+
 </body>
 </html>

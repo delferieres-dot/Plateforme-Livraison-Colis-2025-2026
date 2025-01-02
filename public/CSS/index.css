@@ -32,7 +32,7 @@ body {
     font-weight: bold;
 }
 
-.login {
+.login-btn {
     padding: 8px 25px;
     background-color: #007bff;
     color: white;
@@ -42,7 +42,7 @@ body {
     cursor: pointer;
 }
 
-.login:hover {
+.login-btn:hover {
     background-color: #0056b3;
 }
 

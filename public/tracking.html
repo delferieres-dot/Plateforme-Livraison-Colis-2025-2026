@@ -10,6 +10,7 @@
 
 <header class="header">
     <h1 class="title">FastDeliver</h1>
+    <button id="login-btn" class="login-btn">Connexion</button>
 </header>
 
 <main>
@@ -23,55 +24,39 @@
         </div>
         <hr class="separator">
 
+
+
         <!-- Tracking Details -->
         <div class="tracking-details">
             <h3>Détails de livraison</h3>
             <div class="details-row">
                 <div class="details-block">
                     <p>Date estimée :</p>
-                    <p>2024-11-13</p>
                 </div>
                 <div class="details-block">
                     <p>Poids :</p>
-                    <p>20kg</p>
                 </div>
                 <div class="details-block">
                     <p>Destinataire :</p>
-                    <p>Pluquet Frederic</p>
                 </div>
             </div>
         </div>
 
-        <!-- Delivery Status -->
-        <div class="delivery-status">
-            <h3>Status de livraison</h3>
-            <div class="timeline">
-                <div class="timeline-step">
-                    <div class="status-circle green"></div>
-                    <div class="status-info">
-                        En préparation
-                        <p>13/11/2024 10:23:38</p>
-                        <p>Votre colis est en cours de préparation</p>
-                    </div>
-                </div>
-                <div class="timeline-line"></div>
-                <div class="timeline-step">
-                    <div class="status-circle blue"></div>
-                    <div class="status-info">
-                        En livraison
-                        <p>13/11/2024 10:23:57</p>
-                        <p>Votre colis est en cours de livraison</p>
-                    </div>
-                </div>
-                <div class="timeline-line short-line"></div>
-            </div>
-        </div>
+
+
+        <h3>Statut de livraison</h3>
+            <!-- Delivery Status -->
+          <div class="timeline"></div>
+
+
+
 
         <!-- Delivery Address -->
-        <div class="delivery-address">
+        <div class="details-block-footer">
             <h3>Adresse de livraison</h3>
-            <p>12 rue Frinoise, 7500 Tournai</p>
+            <p2 id="clientAddress"></p2>
         </div>
+
     </div>
 </main>
 

@@ -1,4 +1,3 @@
-/* Style général */
 * {
     margin: 0;
     padding: 0;
@@ -13,32 +12,52 @@ body {
     background-color: #f4f6fa;
 }
 
-/* En-tête */
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 20px 90px;  /* Réduction du padding */
+    padding: 20px 5%;
     background-color: white;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 .title {
-    font-size: 25px;  /* Réduction de la taille de la police */
+    font-size: 24px;
     font-weight: bold;
+    margin-left: 20px;
 }
 
-.logout-button {
-    background-color: #e24e42;
+.admin-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 20px;
+    color: #abacb0;
+}
+
+.role {
+    margin-right: auto;
+    margin-left: 15px;
+    font-size: 13px;
+    padding: 5px 10px;
+    background-color: #007bff;
     color: white;
-    padding: 8px 16px;  /* Réduction du padding */
-    border: none;
-    cursor: pointer;
-    font-size: 12px;  /* Réduction de la taille de la police */
     border-radius: 5px;
 }
 
-.logout-button:hover {
+.logout-btn {
+    background-color: #e24e42;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.logout-btn:hover {
     background-color: #d43b33;
 }
 
@@ -48,17 +67,17 @@ body {
     flex-direction: column;
     align-items: center;
     padding-top: 30px;
-    max-width: 100%;  /* Pour s'assurer qu'il ne déborde pas */
+    max-width: 100%;
 }
 
 /* Box contenant tout le contenu avec fond blanc */
 .content-box {
-    background-color: white;  /* Fond blanc pour le bloc entier */
-    padding: 20px;  /* Réduction du padding */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Ombre légère */
-    width: 100%;  /* Réduit la largeur à 100% */
-    max-width: 1000px;  /* Limite la largeur maximale */
-    border-radius: 8px;  /* Coins arrondis */
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 8px;
 }
 
 /* Container pour le numéro de suivi et les boutons */
@@ -66,26 +85,26 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 15px;  /* Réduction du padding */
-    border-bottom: 1px solid #ccc;  /* Séparation entre le numéro de suivi et les sections */
+    padding: 10px 15px;
+    border-bottom: 1px solid #ccc;
 }
 
 .tracking-number {
-    font-size: 30px;  /* Réduction de la taille de la police */
+    font-size: 30px;
     font-weight: bold;
 }
 
 .buttons-container {
     display: flex;
-    gap: 8px;  /* Réduction de l'écart entre les boutons */
+    gap: 8px;
 }
 
 .btn-save, .btn-cancel {
-    padding: 8px 16px;  /* Réduction du padding */
+    padding: 8px 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 12px;  /* Réduction de la taille     de la police */
+    font-size: 12px;
 }
 
 .btn-cancel {
@@ -98,59 +117,55 @@ body {
 }
 
 .btn-save {
-
     background-color: #0985df;
     color: white;
 }
 
 .btn-cancel:hover {
     background-color: #ffffff;
-
 }
 
 /* Conteneur de contenu */
 .container {
     display: flex;
-    justify-content: space-between;
-    margin-top: 30px;  /* Espacement en haut entre les sections */
-    flex-wrap: wrap;  /* Permet aux sections de se réorganiser si nécessaire */
-    gap: 5px;  /* Espace entre les sections */
+    justify-content: space-between;  /* Affichage horizontal par défaut */
+    gap: 15px;  /* Espacement entre les sections */
+    margin-top: 30px;
+    flex-wrap: wrap;  /* Permet aux sections de passer sur la ligne suivante si nécessaire */
 }
 
 /* Sections Colis Info, Client Info, Livreur Info */
 section {
-    background-color: #f3f3f5;  /* Fond gris clair pour chaque section */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Ombre légère */
-    padding: 15px;  /* Réduction du padding */
-    width: 100%;  /* 100% sur petits écrans */
+    background-color: #f3f3f5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 100%;
     max-width: 290px;  /* Limite la largeur de chaque section */
-    border-radius: 5px;  /* Coins arrondis */
-    margin-bottom: 10px;  /* Réduction de l'espacement entre les sections */
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
-/* Garder les titres en noir */
 h2, h3 {
-    font-size: 16px;  /* Réduction de la taille de la police */
+    font-size: 16px;
     font-weight: bold;
-    margin-bottom: 15px;  /* Réduction de l'espacement */
-    color: black;  /* Couleur du texte en noir */
+    margin-bottom: 15px;
+    color: black;
 }
 
 .form-group {
-    margin-bottom: 10px;  /* Réduction de l'espacement */
+    margin-bottom: 10px;
 }
 
-/* Champ de saisie */
 input, select, textarea {
     width: 100%;
-    padding: 8px;  /* Réduction du padding */
+    padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    font-size: 12px;  /* Réduction de la taille de la police */
+    font-size: 12px;
 }
 
 textarea {
-    height: 80px;  /* Réduction de la hauteur des champs de texte */
+    height: 80px;
 }
 
 /* Pied de page */
@@ -158,7 +173,41 @@ textarea {
     background-color: #292929;
     color: white;
     text-align: center;
-    padding: 25px 10px;  /* Réduction du padding */
+    padding: 25px 10px;
     font-size: 12px;
     margin-top: auto;
+}
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Permet d'empiler les éléments */
+        text-align: center;
+    }
+
+    .title {
+        margin-bottom: 10px; /* Ajoute un espace sous le titre */
+    }
+
+    .role, .admin-info, .logout-btn {
+        margin: 5px 0; /* Espacement vertical des éléments */
+    }
+
+    .container {
+        flex-direction: column; /* Empile les sections à la verticale */
+        align-items: center;
+    }
+
+    section {
+        width: 100%; /* Les sections prennent toute la largeur */
+        max-width: none; /* Supprime la limite de largeur */
+    }
+
+    .tracking-number-box {
+        flex-direction: column; /* Change les boutons et le texte de suivi en affichage vertical */
+        text-align: center; /* Centre les textes */
+        gap: 10px; /* Ajoute un espacement entre les éléments */
+    }
+
+    .buttons-container {
+        justify-content: center; /* Centre les boutons horizontalement */
+    }
 }

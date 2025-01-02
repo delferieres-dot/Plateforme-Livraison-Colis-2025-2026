@@ -7,17 +7,24 @@
 </head>
 <body>
 <header class="header">
-    <h1 class="title">FastDeliver</h1>
-    <button id="logout" class="logout-button">Déconnexion</button>
+    <div class="title">FastDeliver</div>
+    <div class="role">Administration</div>
+    <div class="admin-info">
+        <p>Admin: Jean Martin</p>
+    </div>
+    <button id="logout" class="logout-btn">Déconnexion</button>
 </header>
 
 <main>
     <div class="main-container">
         <div class="content-box">
             <div class="tracking-number-box">
-                <p class="tracking-number">Numéro de suivi : FD28465940BE</p>
+                <p class="tracking-number">
+                    Édition du colis <span id="display-tracking-number"></span>
+                </p>
+
                 <div class="buttons-container">
-                    <button  class="btn-cancel">Annuler</button>
+                    <button id="btn-cancel" class="btn-cancel">Annuler</button>
                     <button id="btn-save" class="btn-save">Enregistrer</button>
                 </div>
             </div>
@@ -28,22 +35,23 @@
                     <form class="colis-form">
                         <div class="form-group">
                             <label for="tracking-number">N° de suivi</label>
-                            <input type="text" id="tracking-number" value="FD28465940BE" disabled>
+                            <input type="text" id="tracking-number" value="" disabled>
                         </div>
                         <div class="form-group">
                             <label for="ship-date">Date d'expédition</label>
-                            <input type="date" id="ship-date" value="2024-11-13">
+                            <input type="date" id="ship-date" value="">
                         </div>
                         <div class="form-group">
                             <label for="weight">Poids (kg)</label>
-                            <input type="number" id="weight" value="20">
+                            <input type="number" id="weight" value="">
                         </div>
                         <div class="form-group">
                             <label for="status">Statut</label>
                             <select id="status">
-                                <option value="en-preparation">En préparation</option>
-                                <option value="en-route">En route</option>
-                                <option value="livré">Livré</option>
+                                <option value="En préparation">En préparation</option>
+                                <option value="En livraison">En livraison</option>
+                                <option value="Livré">Livré</option>
+                                <option value="Problème">Problème</option>
                             </select>
                         </div>
                     </form>
@@ -54,11 +62,11 @@
                     <form class="client-form">
                         <div class="form-group">
                             <label for="name">Nom</label>
-                            <input type="text" id="name" value="Pluquet Frédéric">
+                            <input type="text" id="name" value="">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" value="pluquet@example.com">
+                            <input type="email" id="email" value="">
                         </div>
                         <div class="form-group">
                             <label for="phone">Téléphone</label>
@@ -77,8 +85,9 @@
                         <div class="form-group">
                             <label for="delivery-person">Nom du livreur</label>
                             <select id="delivery-person">
-                                <option value="person1">Livreur 1</option>
-                                <option value="person2">Livreur 2</option>
+                                <option value="Emma Roux">Emma Roux</option>
+                                <option value="Lucas Dubois">Lucas Dubois</option>
+                                <option value="Marc Bernard">Marc Bernard</option>
                             </select>
                         </div>
                         <div class="form-group">

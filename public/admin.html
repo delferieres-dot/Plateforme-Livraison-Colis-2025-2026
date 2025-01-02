@@ -21,14 +21,21 @@
   <div class="main-container">
     <div class="header-row">
       <h1>Gestion des colis</h1>
-      <button id="btn-save" class="add-package-btn">+ Nouveau colis</button>
+      <button id="add-package-btn" class="add-package-btn">+ Nouveau colis</button>
     </div>
     <div class="controls">
       <input type="text" placeholder="Rechercher un colis..." class="search-bar">
       <select class="status-filter">
         <option value="">Tous les statuts</option>
+        <option value="en préparation">En préparation</option>
+        <option value="en livraison">En livraison</option>
+        <option value="livré">Livré</option>
+        <option value="problème">Problème</option>
       </select>
+
       <input type="date" class="date-picker">
+      <button id="reset-button" class="reset-btn" style="display: none;">Réinitialiser</button>
+
       <div class="package-table-container">
         <table class="package-table">
           <thead>

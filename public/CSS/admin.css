@@ -37,6 +37,7 @@ body {
     align-items: center;
     gap: 10px;
     margin-right: 20px;
+    color: #abacb0;
 }
 
 .role {
@@ -49,6 +50,34 @@ body {
     border-radius: 5px;
 }
 
+/* Statuts spécifiques */
+.status {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px; /* Assurez-vous que la taille est la même pour tous */
+    text-align: center;
+    display: inline-block;
+}
+
+.status.probleme {
+    color: #f28a8a; /* Rouge clair */
+    background-color: #fde6e6; /* Fond rouge clair */
+}
+
+.status.livre {
+    color: #739275; /* Vert clair */
+    background-color: #d2eeda; /* Fond vert clair */
+}
+
+.status.en-preparation {
+    color: #f1c40f; /* Jaune */
+    background-color: #fcf7e0; /* Fond jaune clair */
+}
+
+.status.en-livraison {
+    color: #88ceca; /* Vert foncé */
+    background-color: #ddfcff; /* Fond vert foncé clair */
+}
 
 .logout-btn {
     background-color: #e74c3c;
@@ -122,6 +151,7 @@ h1 {
 .package-table-container {
     width: 100%;
     overflow-x: auto; /* Barre de défilement horizontale */
+
 }
 
 .package-table {
@@ -136,10 +166,12 @@ h1 {
     text-align: left;
     border: none;
     font-size: 14px; /* Taille adaptée pour petits écrans */
+
 }
 
 .package-table th {
     background-color: #f3f3f3;
+    color: #6c6d71;
 }
 
 .package-table tr {
@@ -178,6 +210,22 @@ h1 {
     font-size: 12px;
     margin-top: auto;
 }
+
+
+
+.reset-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 11px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left:  5px;
+    display: none; /* Caché par défaut */
+    text-align: center;
+}
+
+
 
 /* Styles spécifiques aux petits écrans */
 @media (max-width: 768px) {
@@ -292,4 +340,5 @@ h1 {
     .add-package-btn {
         margin-top: 10px; /* Ajouter un espacement entre la barre de recherche et le bouton */
     }
+
 }

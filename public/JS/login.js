@@ -4,9 +4,6 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
     const email = document.getElementById('login').value;
     const password = document.getElementById('password').value;
 
-    console.log("Email:", email);  // Debug
-    console.log("Mot de passe:", password);  // Debug
-
     try {
         const response = await fetch('http://localhost:3004/api/login', {
             method: 'POST',
@@ -20,6 +17,9 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
         console.log(result);  // Debug pour afficher la réponse
 
         if (response.ok) {
+            // Enregistrer les informations de l'utilisateur dans localStorage
+            localStorage.setItem('user', JSON.stringify(result.user));
+
             if (result.user.role === 'Administrateur') {
                 window.location.href = '/admin.html';
             } else if (result.user.role === 'Livreur') {

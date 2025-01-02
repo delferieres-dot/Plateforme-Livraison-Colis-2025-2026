@@ -46,7 +46,6 @@ body {
     font-weight: bold;
 }
 
-
 .admin-info {
     margin-right: 10px;
     color: #555;
@@ -108,11 +107,11 @@ main {
     cursor: pointer;
 }
 
-.package
-{
+.package {
     margin-top: 5px;
-   color: #7e808c;
+    color: #7e808c;
 }
+
 .problem-btn:hover {
     background-color: #e6e6e6;
 }
@@ -158,12 +157,13 @@ main {
 }
 
 .recipient-info p span {
-color: #7e808c;
+    color: #7e808c;
 }
 
-.dataRecipient{
+.dataRecipient {
     margin-bottom: 25px;
 }
+
 /* Footer */
 .footer {
     background-color: #292929;
@@ -172,4 +172,191 @@ color: #7e808c;
     padding: 25px 10px;
     font-size: 12px;
     margin-top: auto;
+}
+
+/* Style pour l'affichage lorsque aucune livraison n'est trouvée */
+.no-delivery {
+    display: none; /* Par défaut, caché */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.no-delivery-container {
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.no-delivery-image {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.no-delivery-message {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Style pour la section "Prochain colis" */
+.next-package-container {
+    background-color: white;
+    width: 63%;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative; /* Pour la gestion des boutons si nécessaire */
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h1 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.package {
+    margin-top: 5px;
+    color: #7e808c;
+}
+
+/* Section destinataire */
+.recipient-info {
+    background-color: #f9f9fb;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.recipient-info h2 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.recipient-info p {
+    margin-bottom: 5px;
+}
+
+.recipient-info p span {
+    color: #7e808c;
+}
+
+.dataRecipient {
+    margin-bottom: 25px;
+}
+
+/* Style du séparateur */
+.separator {
+    height: 1px;
+    background-color: #ddd;
+    margin: 15px 0 30px 0;
+    width: 100%;
+    align-self: center;
+}
+
+/* Instructions */
+.instructions {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    display: none; /* Cacher par défaut */
+}
+
+.note {
+    background-color: #fef9e0;
+    padding: 10px;
+    border-left: 5px solid #f1b400;
+    margin-top: 10px;
+    display: none; /* Cacher par défaut */
+}
+
+.note-header {
+    width: 20px;
+    height: 100%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.dataRecipient2 {
+    color: #7e808c;
+}
+
+.next-packages-list {
+    display: flex; /* Affiche les colis en ligne */
+    gap: 20px; /* Espace entre les colis */
+    overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
+    background-color: #f9f9fb;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.separator {
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    margin-top: 20px;
+}
+
+.next-package-item p {
+    margin: 5px 0;
+}
+
+.next-package-item .tracking-number {
+    color: #808080; /* Gris pour le tracking number */
+}
+
+.next-package-item .address {
+    color: #000000; /* Noir pour l'adresse */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .title {
+        margin-bottom: 10px;
+    }
+
+    .role {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .admin-info {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .logout-btn {
+        margin-bottom: 10px;
+    }
+
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
 }
