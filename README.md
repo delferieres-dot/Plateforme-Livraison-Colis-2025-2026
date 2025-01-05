@@ -89,15 +89,15 @@ L'API respecte les standards REST. Des commentaires ont été ajoutés dans les 
 
 Pour initialiser le projet (base de donnée), exécutez la commande suivante dans votre terminal :
 
-bash
+```bash
 npm run init
+```
 
 
 Pour demarré le projet, exécutez la commande suivante dans votre terminal :
-
-bash
+```bash
 npm run start
-
+```
 
 ## 6. Vidéo explicative
 
@@ -109,6 +109,13 @@ Pour mieux comprendre le fonctionnement de ce projet, vous pouvez regarder cette
 - **Fonctionnalités principales** : Démonstration des principales fonctionnalités et leur implémentation.
 - **Exemples d'utilisation** : Tutoriel pour montrer comment utilisé l'application.
 
-📹 **Lien vers la vidéo :**  
-[Regarder la vidéo explicative](https://lien_vers_video.com)
 
+📹 **Lien vers la vidéo :**  
+[Regarder la vidéo explicative](https://youtu.be/0H6vFL9O5FY)
+
+### https://youtu.be/0H6vFL9O5FY
+
+## 7. Lien :
+**Lien de la page** : [Fast-Deliver](http://localhost:3004/)
+
+**Lien de la page d'index** : http://localhost:3004/index.html 

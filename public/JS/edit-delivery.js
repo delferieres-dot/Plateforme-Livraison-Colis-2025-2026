@@ -70,8 +70,31 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.getElementById("display-tracking-number").textContent = newTrackingNumber; // Affiche le nouveau numéro de suivi
     }
 
+    // Fonction de validation des champs
+    const validateFields = () => {
+        const trackingNumber = document.getElementById("tracking-number").value;
+        const shipDate = document.getElementById("ship-date").value;
+        const status = document.getElementById("status").value;
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const address = document.getElementById("address").value;
+        const deliveryPerson = document.getElementById("delivery-person").value;
+        const weight = document.getElementById("weight").value;
+        const phone = document.getElementById("phone").value;
+
+        if (!trackingNumber || !shipDate || !status || !name || !email || !address || !deliveryPerson || !weight || !phone) {
+            alert("Tous les champs doivent être remplis. Sauf la note.");
+            return false;
+        }
+        return true;
+    };
+
     // Gestion du bouton de sauvegarde (ajout ou modification du colis)
     document.getElementById("btn-save").addEventListener("click", async () => {
+        if (!validateFields()) {
+            return; // Si la validation échoue, arrête l'exécution de la fonction
+        }
+
         // Récupère les données du formulaire
         const updatedPackage = {
             trackingNumber: document.getElementById("tracking-number").value,

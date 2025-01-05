@@ -81,7 +81,22 @@ const addUser = async (name, email, password, role) => {
     });
 };
 
-// Insérer chaque utilisateur séquentiellement
+// Fonction pour ajouter un colis
+const addPackage = (trackingNumber, shipDate, clientName, clientAddress, status, deliveryPerson, clientEmail, weight, phoneNumber, note) => {
+    return new Promise((resolve, reject) => {
+        const query = `INSERT INTO packages (trackingNumber, shipDate, clientName, clientAddress, status, deliveryPerson, clientEmail, weight, phoneNumber, note)
+                       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+        db.run(query, [trackingNumber, shipDate, clientName, clientAddress, status, deliveryPerson, clientEmail, weight, phoneNumber, note], function (err) {
+            if (err) {
+                reject(`Erreur lors de l'insertion du colis: ${err.message}`);
+            } else {
+                resolve(`Colis ajouté avec succès: ${trackingNumber}`);
+            }
+        });
+    });
+};
+
+// Insérer des utilisateurs et des colis séquentiellement
 const users = [
     { name: "Jean Martin", email: "admin@fastdeliver.com", password: "admin123", role: "Administrateur" },
     { name: "Emma Roux", email: "emma@fastdeliver.com", password: "driver123", role: "Livreur" },
@@ -89,16 +104,34 @@ const users = [
     { name: "Lucas Dubois", email: "lucas@fastdeliver.com", password: "driver123", role: "Livreur" },
 ];
 
-// Créez les tables et insérez les utilisateurs
+const packages = [
+    { trackingNumber: "FD28465937BE", shipDate: "2025-01-01", clientName: "Alice Dupont", clientAddress: "1 Rue de Paris", status: "Livré", deliveryPerson: "Emma Roux", clientEmail: "alice@domain.com", weight: 5.2, phoneNumber: "0123456789", note: "Fragile" },
+    { trackingNumber: "FD28465938BE", shipDate: "2025-01-02", clientName: "Bob Martin", clientAddress: "5 Avenue des Champs", status: "Problème", deliveryPerson: "Marc Bernard", clientEmail: "bob@domain.com", weight: 10.1, phoneNumber: "0987654321", note: "Livrer en main propre" },
+    { trackingNumber: "FD28465939BE", shipDate: "2025-01-03", clientName: "Claire Lefevre", clientAddress: "12 Boulevard Saint-Michel", status: "En livraison", deliveryPerson: "Lucas Dubois", clientEmail: "claire@domain.com", weight: 2.8, phoneNumber: "0147259638", note: "N/A" },
+    { trackingNumber: "FD28465940BE", shipDate: "2025-01-04", clientName: "David Lemoine", clientAddress: "7 Rue de Lyon", status: "En préparation", deliveryPerson: "Emma Roux", clientEmail: "david@domain.com", weight: 3.5, phoneNumber: "0654321789", note: "Urgent" }
+];
+
+// Créez les tables, insérez les utilisateurs et les colis
 (async () => {
     createTables();
 
+    // Ajout des utilisateurs
     for (const user of users) {
         try {
             const result = await addUser(user.name, user.email, user.password, user.role);
             console.log(result);
         } catch (error) {
             console.error(`Erreur pour l'utilisateur ${user.email}:`, error);
+        }
+    }
+
+    // Ajout des colis
+    for (const pkg of packages) {
+        try {
+            const result = await addPackage(pkg.trackingNumber, pkg.shipDate, pkg.clientName, pkg.clientAddress, pkg.status, pkg.deliveryPerson, pkg.clientEmail, pkg.weight, pkg.phoneNumber, pkg.note);
+            console.log(result);
+        } catch (error) {
+            console.error(`Erreur pour le colis ${pkg.trackingNumber}:`, error);
         }
     }
 })();
