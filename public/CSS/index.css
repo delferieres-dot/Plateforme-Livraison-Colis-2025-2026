@@ -11,6 +11,7 @@ body {
     min-height: 100vh;
 }
 
+/* Styles pour les emojis */
 .emoji {
     font-size: 30px;
     display: block;
@@ -18,6 +19,7 @@ body {
     margin-bottom: 10px;
 }
 
+/* En-tête */
 .header {
     display: flex;
     justify-content: space-between;
@@ -32,6 +34,7 @@ body {
     font-weight: bold;
 }
 
+/* Bouton de connexion */
 .login-btn {
     padding: 8px 25px;
     background-color: #007bff;
@@ -46,6 +49,7 @@ body {
     background-color: #0056b3;
 }
 
+/* Section principale (gradient de couleur) */
 .middle {
     background: linear-gradient(to right, #6fb6ff, #0d86e3);
     color: white;
@@ -64,6 +68,7 @@ body {
     margin-bottom: 20px;
 }
 
+/* Recherche */
 .search {
     display: flex;
     justify-content: center;
@@ -85,6 +90,7 @@ body {
     flex: 1;
 }
 
+/* Bouton de suivi */
 .buttonFollow {
     padding: 10px 15px;
     font-size: 12px;
@@ -96,17 +102,19 @@ body {
     flex: none;
 }
 
+/* Container des boîtes */
 .frame {
     display: flex;
     flex-wrap: nowrap;
     align-content: center;
     justify-content: center;
     align-items: normal;
-    gap: 30px; /* Ajoute un espace constant entre les boîtes */
+    gap: 30px;
     padding: 40px 90px;
     background-color: #f5f8fa;
 }
 
+/* Style des boîtes */
 .frameBox {
     text-align: center;
     background-color: white;
@@ -117,8 +125,6 @@ body {
     margin-bottom: 20px;
     align-items: center;
 }
-
-
 
 .frameTitle {
     font-size: 15px;
@@ -132,6 +138,7 @@ body {
     margin-bottom: 15px;
 }
 
+/* Pied de page */
 .footer {
     background-color: #292929;
     color: white;
@@ -141,12 +148,13 @@ body {
     margin-top: auto;
 }
 
+/* Responsive - Appareil avec largeur <= 768px */
 @media (max-width: 768px) {
-
     .header {
         padding: 20px 15px;
     }
 
+    /* Recherche en colonne */
     .search {
         flex-direction: column;
         width: 100%;
@@ -159,34 +167,36 @@ body {
         width: 100%;
     }
 
+    /* Bouton de suivi en largeur 100% */
     .buttonFollow {
         width: 100%;
         font-size: 14px;
         padding: 10px;
     }
 
+    /* Utilisation de Grid pour la disposition des boîtes */
     .frame {
-        display: grid; /* Utilisation de Grid */
-        grid-template-columns: repeat(2, 1fr); /* Deux colonnes égales */
-        grid-template-rows: auto auto; /* Deux lignes automatiques */
-        gap: 20px; /* Espacement entre les éléments */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto;
+        gap: 20px;
         padding: 20px 15px;
-        justify-items: center; /* Centrer les éléments dans les cellules */
+        justify-items: center;
     }
 
     .elementBox1 {
-        grid-column: 1; /* Premier élément dans la première colonne */
-        grid-row: 1; /* Première ligne */
+        grid-column: 1;
+        grid-row: 1;
     }
 
     .elementBox2 {
-        grid-column: 2; /* Deuxième élément dans la deuxième colonne */
-        grid-row: 1; /* Première ligne */
+        grid-column: 2;
+        grid-row: 1;
     }
 
     .elementBox3 {
-        grid-column: 1; /* Troisième élément dans la première colonne */
-        grid-row: 2; /* Deuxième ligne */
+        grid-column: 1;
+        grid-row: 2;
     }
 
     .frameBox {
@@ -199,12 +209,13 @@ body {
     }
 }
 
+/* Responsive - Appareil avec largeur <= 480px */
 @media (max-width: 480px) {
-
     .header {
         padding: 20px 15px;
     }
 
+    /* Recherche en colonne */
     .search {
         flex-direction: column;
         width: 100%;
@@ -216,22 +227,24 @@ body {
         width: 100%;
     }
 
+    /* Bouton de suivi en largeur 100% */
     .buttonFollow {
         width: 100%;
         padding: 8px 10px;
     }
 
+    /* Affichage en colonne pour les boîtes */
     .frame {
-        display: flex; /* Utilisation de Flexbox */
-        flex-direction: column; /* Aligner les éléments en colonne */
-        gap: 20px; /* Espacement entre les éléments */
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
         padding: 20px 15px;
-        justify-content: center; /* Centrer les éléments verticalement */
-        align-items: center; /* Centrer les éléments horizontalement */
+        justify-content: center;
+        align-items: center;
     }
 
     .frameBox {
-        width: 90%; /* Ajuste la largeur des cartes pour correspondre à l'écran */
+        width: 90%;
     }
 
     .footer {

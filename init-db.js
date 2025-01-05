@@ -51,5 +51,8 @@ const createTables = () => {
     });
 };
 
+// Appel de la fonction pour créer les tables
 createTables();
+
+// Fermeture de la connexion à la base de données
 db.close();

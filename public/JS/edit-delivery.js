@@ -1,75 +1,78 @@
 // Gestion du bouton de déconnexion
 document.getElementById('logout').addEventListener('click', async () => {
-    window.location.href = '/login.html';
+    window.location.href = '/login.html'; // Redirige vers la page de connexion
 });
 
 // Gestion du bouton d'annulation
 document.getElementById('btn-cancel').addEventListener('click', async () => {
-    window.location.href = 'admin.html';
+    window.location.href = 'admin.html'; // Redirige vers la page d'administration
 });
 
+// Lorsque le DOM est complètement chargé
 document.addEventListener("DOMContentLoaded", async () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const packageId = urlParams.get("id");
-    let originalStatus = '';
+    const urlParams = new URLSearchParams(window.location.search); // Récupère les paramètres d'URL
+    const packageId = urlParams.get("id"); // Récupère l'ID du colis passé en paramètre
+    let originalStatus = ''; // Variable pour stocker le statut original du colis
 
-    // Fonction pour générer le prochain numéro de suivi
+    // Fonction pour générer un nouveau numéro de suivi
     const generateTrackingNumber = async () => {
         try {
-            const response = await fetch('http://localhost:3004/api/packages');
+            const response = await fetch('http://localhost:3004/api/packages'); // Récupère la liste des colis existants
             if (!response.ok) throw new Error('Erreur lors de la récupération des colis');
 
             const packages = await response.json();
-            if (packages.length === 0) return 'FD28465940BE'; // Premier numéro par défaut
+            if (packages.length === 0) return 'FD28465940BE'; // Premier numéro par défaut si aucun colis n'existe
 
-            // Extraire le dernier numéro de suivi
+            // Extraire et trier les numéros de suivi pour générer le prochain
             const lastTrackingNumber = packages
-                .map(pkg => parseInt(pkg.trackingNumber.match(/\d+/)?.[0], 10))
-                .sort((a, b) => b - a)[0];
+                .map(pkg => parseInt(pkg.trackingNumber.match(/\d+/)?.[0], 10)) // Extrait les numéros
+                .sort((a, b) => b - a)[0]; // Trie les numéros par ordre décroissant
 
-            const nextTrackingNumber = (lastTrackingNumber + 1).toString().padStart(8, '0');
-            return `FD${nextTrackingNumber}BE`;
+            const nextTrackingNumber = (lastTrackingNumber + 1).toString().padStart(8, '0'); // Incrémente et formate
+            return `FD${nextTrackingNumber}BE`; // Retourne le prochain numéro de suivi
         } catch (error) {
-            console.error('Erreur lors de la génération du numéro de suivi:', error);
+            // En cas d'erreur, retourne "Erreur"
             return 'Erreur';
         }
     };
 
-    // Charger les données du colis si un ID est passé
+    // Si un ID de colis est passé dans l'URL, charger les données du colis
     if (packageId) {
         try {
-            const response = await fetch(`http://localhost:3004/api/packages/${packageId}`);
+            const response = await fetch(`http://localhost:3004/api/packages/${packageId}`); // Récupère le colis par son ID
             const packageData = await response.json();
 
             if (response.ok) {
+                // Remplir les champs du formulaire avec les données du colis
                 document.getElementById("tracking-number").value = packageData.trackingNumber;
-                document.getElementById("display-tracking-number").textContent = packageData.trackingNumber; // Mettez à jour ici
+                document.getElementById("display-tracking-number").textContent = packageData.trackingNumber; // Affiche le numéro de suivi
                 document.getElementById("ship-date").value = packageData.shipDate;
                 document.getElementById("status").value = packageData.status;
                 document.getElementById("name").value = packageData.clientName;
                 document.getElementById("email").value = packageData.clientEmail;
                 document.getElementById("address").value = packageData.clientAddress;
                 document.getElementById("delivery-person").value = packageData.deliveryPerson;
-                document.getElementById("weight").value = packageData.weight || '';
-                document.getElementById("phone").value = packageData.phoneNumber || '';
-                document.getElementById("notes").value = packageData.note || '';
-                originalStatus = packageData.status; // Stockez le statut original
+                document.getElementById("weight").value = packageData.weight || ''; // Valeur optionnelle
+                document.getElementById("phone").value = packageData.phoneNumber || ''; // Valeur optionnelle
+                document.getElementById("notes").value = packageData.note || ''; // Valeur optionnelle
+                originalStatus = packageData.status; // Sauvegarde le statut original
             } else {
                 throw new Error("Colis non trouvé.");
             }
         } catch (error) {
-            console.error("Erreur lors du chargement des données du colis:", error);
+            // En cas d'erreur lors de la récupération des données du colis
             alert("Erreur lors du chargement des données.");
         }
     } else {
-        // Générer un nouveau numéro de suivi si aucun ID n'est passé
+        // Si aucun ID n'est fourni, générer un nouveau numéro de suivi
         const newTrackingNumber = await generateTrackingNumber();
         document.getElementById("tracking-number").value = newTrackingNumber;
-        document.getElementById("display-tracking-number").textContent = newTrackingNumber; // Mettez à jour ici
+        document.getElementById("display-tracking-number").textContent = newTrackingNumber; // Affiche le nouveau numéro de suivi
     }
 
-    // Gestion du bouton de sauvegarde
+    // Gestion du bouton de sauvegarde (ajout ou modification du colis)
     document.getElementById("btn-save").addEventListener("click", async () => {
+        // Récupère les données du formulaire
         const updatedPackage = {
             trackingNumber: document.getElementById("tracking-number").value,
             shipDate: document.getElementById("ship-date").value,
@@ -84,11 +87,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         };
 
         try {
-            const method = packageId ? 'PUT' : 'POST'; // Si packageId existe, modification (PUT), sinon création (POST)
+            // Détermine la méthode HTTP selon la présence de l'ID (PUT pour modification, POST pour ajout)
+            const method = packageId ? 'PUT' : 'POST';
             const url = packageId
                 ? `http://localhost:3004/api/packages/${packageId}`
-                : 'http://localhost:3004/api/packages';
+                : 'http://localhost:3004/api/packages'; // URL cible de l'API
 
+            // Effectue la requête HTTP pour sauvegarder les données
             const response = await fetch(url, {
                 method,
                 headers: { 'Content-Type': 'application/json' },
@@ -97,24 +102,25 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             if (!response.ok) throw new Error("Erreur lors de la sauvegarde du colis.");
 
-            // Mise à jour de l'historique si un statut est modifié
+            // Si le statut du colis a changé, ajoute une entrée dans l'historique
             if (packageId && updatedPackage.status !== originalStatus) {
                 const historyResponse = await fetch(`http://localhost:3004/api/packages/${packageId}/history`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
                         status: updatedPackage.status,
-                        date: new Date().toISOString() // Ajouter l'heure actuelle
+                        date: new Date().toISOString() // Ajoute la date et l'heure actuelles
                     }),
                 });
 
                 if (!historyResponse.ok) throw new Error("Erreur lors de la mise à jour de l'historique.");
             }
 
+            // Affiche une alerte pour informer de la réussite de l'opération
             alert(packageId ? "Colis modifié avec succès !" : "Nouveau colis enregistré avec succès !");
-            window.location.href = "admin.html"; // Rediriger vers la page d'administration
+            window.location.href = "admin.html"; // Redirige vers la page d'administration
         } catch (error) {
-            console.error("Erreur:", error);
+            // En cas d'erreur, affiche un message d'erreur
             alert(error.message);
         }
     });

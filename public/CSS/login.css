@@ -1,3 +1,4 @@
+/* Réinitialisation globale des styles */
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +6,7 @@
     font-family: Arial, sans-serif;
 }
 
+/* Style de base pour le body */
 body {
     display: flex;
     flex-direction: column;
@@ -12,6 +14,7 @@ body {
     background-color: #f4f6fa;
 }
 
+/* Styles pour les labels de connexion et mot de passe */
 .textLogin, .textPassword {
     color: #7e808c;
     text-align: left;
@@ -19,6 +22,7 @@ body {
     margin-bottom: 6px;
 }
 
+/* En-tête de la page */
 .header {
     display: flex;
     justify-content: space-between;
@@ -28,11 +32,13 @@ body {
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
 }
 
+/* Titre dans l'en-tête */
 .title {
     font-size: 25px;
     font-weight: bold;
 }
 
+/* Conteneur principal pour le formulaire de connexion */
 .loginContainer {
     display: flex;
     justify-content: center;
@@ -41,6 +47,7 @@ body {
     padding: 20px;
 }
 
+/* Boîte de connexion (formulaire) */
 .loginBox {
     width: 100%;
     max-width: 350px;
@@ -51,13 +58,13 @@ body {
     text-align: center;
 }
 
+/* Titre dans la boîte de connexion */
 .loginBox h2 {
     font-size: 24px;
     margin-bottom: 30px;
 }
 
-
-
+/* Styles pour les champs de saisie dans la boîte de connexion */
 .loginBox input {
     width: 100%;
     padding: 10px;
@@ -66,6 +73,7 @@ body {
     border-radius: 4px;
 }
 
+/* Styles pour le bouton de connexion */
 .loginBox button {
     width: 100%;
     padding: 10px;
@@ -78,26 +86,29 @@ body {
     margin-top: 10px;
 }
 
+/* Effet au survol du bouton de connexion */
 .loginBox button:hover {
     background-color: #0056b3;
 }
 
+/* Pied de page */
 .footer {
     background-color: #292929;
     color: white;
     text-align: center;
-
     padding: 25px 10px;
     font-size: 12px;
     margin-top: auto;
 }
 
+/* Media query pour les écrans de largeur <= 768px (tablettes) */
 @media (max-width: 768px) {
     .header {
         padding: 20px 15px;
     }
 }
 
+/* Media query pour les écrans de largeur <= 480px (mobiles) */
 @media (max-width: 480px) {
     .header {
         padding: 20px 15px;

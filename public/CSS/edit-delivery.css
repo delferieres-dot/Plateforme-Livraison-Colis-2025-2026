@@ -61,7 +61,7 @@ body {
     background-color: #d43b33;
 }
 
-/* Conteneur principal */
+/* Main container */
 .main-container {
     display: flex;
     flex-direction: column;
@@ -70,7 +70,7 @@ body {
     max-width: 100%;
 }
 
-/* Box contenant tout le contenu avec fond blanc */
+/* Content box */
 .content-box {
     background-color: white;
     padding: 20px;
@@ -80,7 +80,7 @@ body {
     border-radius: 8px;
 }
 
-/* Container pour le numéro de suivi et les boutons */
+/* Tracking number and buttons container */
 .tracking-number-box {
     display: flex;
     justify-content: space-between;
@@ -113,7 +113,7 @@ body {
 }
 
 .btn-save:hover {
-    background-color: #f3f7fb;
+    background-color: #0362c1;
 }
 
 .btn-save {
@@ -125,22 +125,22 @@ body {
     background-color: #ffffff;
 }
 
-/* Conteneur de contenu */
+/* Container for content */
 .container {
     display: flex;
-    justify-content: space-between;  /* Affichage horizontal par défaut */
-    gap: 15px;  /* Espacement entre les sections */
+    justify-content: space-between;
+    gap: 15px;
     margin-top: 30px;
-    flex-wrap: wrap;  /* Permet aux sections de passer sur la ligne suivante si nécessaire */
+    flex-wrap: wrap;
 }
 
-/* Sections Colis Info, Client Info, Livreur Info */
+/* Section styling */
 section {
     background-color: #f3f3f5;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 15px;
     width: 100%;
-    max-width: 290px;  /* Limite la largeur de chaque section */
+    max-width: 290px;
     border-radius: 5px;
     margin-bottom: 10px;
 }
@@ -168,7 +168,7 @@ textarea {
     height: 80px;
 }
 
-/* Pied de page */
+/* Footer */
 .footer {
     background-color: #292929;
     color: white;
@@ -177,37 +177,40 @@ textarea {
     font-size: 12px;
     margin-top: auto;
 }
+
+/* Media queries for responsiveness */
 @media (max-width: 768px) {
     .header {
-        flex-direction: column; /* Permet d'empiler les éléments */
+        flex-direction: column;
         text-align: center;
     }
 
     .title {
-        margin-bottom: 10px; /* Ajoute un espace sous le titre */
+        margin-bottom: 10px;
     }
 
     .role, .admin-info, .logout-btn {
-        margin: 5px 0; /* Espacement vertical des éléments */
+        margin: 5px 0;
     }
 
     .container {
-        flex-direction: column; /* Empile les sections à la verticale */
+        flex-direction: column;
         align-items: center;
     }
 
     section {
-        width: 100%; /* Les sections prennent toute la largeur */
-        max-width: none; /* Supprime la limite de largeur */
+        width: 100%;
+        max-width: none;
     }
 
     .tracking-number-box {
-        flex-direction: column; /* Change les boutons et le texte de suivi en affichage vertical */
-        text-align: center; /* Centre les textes */
-        gap: 10px; /* Ajoute un espacement entre les éléments */
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 10px;
     }
 
     .buttons-container {
-        justify-content: center; /* Centre les boutons horizontalement */
+        justify-content: flex-start;
     }
 }

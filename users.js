@@ -8,36 +8,45 @@ import validator from 'validator';
 const dbPath = path.resolve('db.sqlite');
 const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
+        // Erreur lors de la connexion à la base de données
         console.error('Erreur de connexion à la base de données:', err.message);
-    } else {
-        console.log('Connexion à la base de données SQLite réussie');
     }
 });
 
 // Fonction pour ajouter un utilisateur avec un mot de passe haché
 const addUser = (name, email, password, role) => {
+    // Vérification de la validité de l'email
     if (!validator.isEmail(email)) {
         throw new Error('E-mail invalide');
     }
 
+    // Nettoyage des données pour éviter les attaques XSS
     const sanitizedName = xss(name);
     const sanitizedEmail = xss(email);
     const sanitizedRole = xss(role);
+
+    // Nombre de rounds pour le hachage du mot de passe
     const saltRounds = 10;
 
     return new Promise((resolve, reject) => {
+        // Hachage du mot de passe
         bcrypt.hash(password, saltRounds, (err, hashedPassword) => {
             if (err) {
+                // Si une erreur se produit lors du hachage
                 reject(`Erreur lors du hachage du mot de passe: ${err.message}`);
                 return;
             }
 
+            // Requête SQL pour insérer un nouvel utilisateur
             const query = `INSERT INTO usersData (name, email, password, role) VALUES (?, ?, ?, ?)`;
+
+            // Exécution de la requête SQL avec les données nettoyées et le mot de passe haché
             db.run(query, [sanitizedName, sanitizedEmail, hashedPassword, sanitizedRole], function(err) {
                 if (err) {
+                    // Si une erreur se produit lors de l'insertion dans la base de données
                     reject(`Erreur lors de l'insertion dans la base de données: ${err.message}`);
                 } else {
-                    console.log(`Utilisateur ajouté avec l'ID ${this.lastID}`);
+                    // Résolution de la promesse après l'ajout de l'utilisateur
                     resolve();
                 }
             });
@@ -45,19 +54,5 @@ const addUser = (name, email, password, role) => {
     });
 };
 
-// Fonction pour ajouter des données d'exemple
-const addSampleData = async () => {
-    try {
-        await addUser('Jean Martin', 'admin@fastdeliver.com', 'admin123', 'Administrateur');
-        await addUser('Emma Roux', 'emma@fastdeliver.com', 'driver123', 'Livreur');
-        await addUser('Marc Bernard', 'marc@fastdeliver.com', 'driver123', 'Livreur');
-        await addUser('Lucas Dubois', 'lucas@fastdeliver.com', 'driver123', 'Livreur');
-    } catch (err) {
-        console.error(err);
-    } finally {
-        db.close();
-    }
-};
-
-// Ajouter des données d'exemple
-addSampleData();
+// Export de la fonction addUser pour utilisation dans d'autres modules
+export { addUser };
