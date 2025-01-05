@@ -177,8 +177,6 @@ main {
 
 /* Style pour l'affichage lorsque aucune livraison n'est trouvée */
 .no-delivery {
-    display: none;
-    display: flex;
     justify-content: center;
     align-items: center;
     min-height: 60vh;
@@ -333,16 +331,6 @@ main {
     }
 
     .title {
-        margin-bottom: 10px;
-    }
-
-    .role {
-        margin: 0;
-        margin-bottom: 10px;
-    }
-
-    .admin-info {
-        margin: 0;
         margin-bottom: 10px;
     }
 

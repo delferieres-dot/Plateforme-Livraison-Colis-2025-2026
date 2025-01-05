@@ -96,14 +96,14 @@ const addPackage = (trackingNumber, shipDate, clientName, clientAddress, status,
     });
 };
 
-// Insérer des utilisateurs et des colis séquentiellement
+// Insérer des utilisateurs
 const users = [
     { name: "Jean Martin", email: "admin@fastdeliver.com", password: "admin123", role: "Administrateur" },
     { name: "Emma Roux", email: "emma@fastdeliver.com", password: "driver123", role: "Livreur" },
     { name: "Marc Bernard", email: "marc@fastdeliver.com", password: "driver123", role: "Livreur" },
     { name: "Lucas Dubois", email: "lucas@fastdeliver.com", password: "driver123", role: "Livreur" },
 ];
-
+// Insérer des colis
 const packages = [
     { trackingNumber: "FD28465937BE", shipDate: "2025-01-01", clientName: "Alice Dupont", clientAddress: "1 Rue de Paris", status: "Livré", deliveryPerson: "Emma Roux", clientEmail: "alice@domain.com", weight: 5.2, phoneNumber: "0123456789", note: "Fragile" },
     { trackingNumber: "FD28465938BE", shipDate: "2025-01-02", clientName: "Bob Martin", clientAddress: "5 Avenue des Champs", status: "Problème", deliveryPerson: "Marc Bernard", clientEmail: "bob@domain.com", weight: 10.1, phoneNumber: "0987654321", note: "Livrer en main propre" },

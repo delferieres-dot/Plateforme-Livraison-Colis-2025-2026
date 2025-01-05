@@ -135,7 +135,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Si la mise à jour est réussie
             if (response.ok) {
-                alert('Le colis a été marqué comme problème.');
+                // Ajouter une entrée dans l'historique
+                await fetch(`http://localhost:3004/api/packages/${packageId}/history`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        status: 'Problème',
+                        date: new Date().toISOString() // Ajoute la date et l'heure actuelles
+                    }),
+                });
+
                 fetchNextDelivery(user.name); // Recharge la liste des colis
             } else {
                 const errorData = await response.json();
@@ -158,6 +167,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Si la mise à jour est réussie
             if (response.ok) {
+                // Ajouter une entrée dans l'historique
+                await fetch(`http://localhost:3004/api/packages/${packageId}/history`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        status: 'Livré',
+                        date: new Date().toISOString() // Ajoute la date et l'heure actuelles
+                    }),
+                });
+
                 alert('Le colis a été marqué comme livré.');
                 fetchNextDelivery(user.name); // Recharge la liste des colis
             } else {
