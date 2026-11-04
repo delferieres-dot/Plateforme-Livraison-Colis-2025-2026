@@ -5,6 +5,10 @@ Dépôt officiel du projet de site web dédié à la gestion, l'expédition et l
 ## 🚀 Vue d'ensemble du projet
 Ce projet consiste en la conception et la refonte d'une application web de logistique. Face à un code initial comportant des erreurs et des dysfonctionnements, l'objectif a été d'analyser l'existant, de reprendre la logique métier et de réécrire le code proprement pour garantir la fiabilité du service de livraison.
 
+### 🎥 Démonstration Vidéo
+Découvre la présentation et la démonstration du projet en vidéo :
+[![Démonstration du Projet](https://img.youtube.com/vi/0H6vFL9O5FY/0.jpg)](https://youtu.be/0H6vFL9O5FY)
+
 ### 🛠️ Fonctionnalités principales
 * **Gestion des expéditions :** Création, modification et suivi des commandes de colis.
 * **Suivi en temps réel :** Tableaux de bord pour suivre les étapes d'acheminement.
